@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>naya app 2 src/App.js</code> and save to reload.
+          Edit <code> New code src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
