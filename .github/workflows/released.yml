@@ -8,13 +8,13 @@ on:
 jobs:
 
 
-
-  uses:  techay-mihir-simform/frontend_react/.github/workflows/build.yml@main
+  build:
+    uses:  techay-mihir-simform/frontend_react/.github/workflows/build.yml@main
     # secrets:
     #   SOME_SECRET: "test"
-  build:
+
     runs-on: ubuntu-latest
-    
+
   released:
     needs: build
 
