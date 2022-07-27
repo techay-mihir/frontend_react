@@ -1,0 +1,18 @@
+name: Build
+
+on:
+  workflow_call:
+    secrets:
+      SOME_SECRET:
+        required: true
+
+jobs:
+  build:
+    steps:
+      # Your build steps here
+
+      - name: Create build-output artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: build-output
+          path: build/
