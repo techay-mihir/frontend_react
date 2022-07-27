@@ -2,9 +2,9 @@ name: build
 
 on:
   workflow_call:
-    secrets:
-      SOME_SECRET:
-        required: true
+    # secrets:
+    #   SOME_SECRET:
+    #     required: true
 
 jobs:
   build:
