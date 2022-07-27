@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    uses: frontend_react/.github/workflows/build.yml@main
+    uses:  techay-mihir-simform/frontend_react/.github/workflows/build.yml@main
     secrets:
       SOME_SECRET: ${{ secrets.SOME_SECRET }}
 
