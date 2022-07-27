@@ -29,7 +29,7 @@ jobs:
     -  run: |
         echo " ${{ github.event.args.ref }} "
     - run: |
-        echo "Log level: ${{ github.event.inputs.ref }}"
-        echo ${{ github.event.ref }}
+        echo "Log level: ${{ github.repository }}"
+        echo ${{ github.event.repository }}
     - run: npm ci
     - run: npm test
