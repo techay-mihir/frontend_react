@@ -23,20 +23,20 @@ jobs:
         node-version: [14.x]
     steps:
 #     - uses: actions/checkout@v3
-#     - name: Use Node.js ${{ matrix.node-version }}
-#       uses: actions/setup-node@v3
-#       with:
-#         node-version: ${{ matrix.node-version }}
-#         cache: 'npm'
-#     -  run: |
-#         echo " ${{ github.event.args.ref }} "
-#     - run: |
-#         echo "Log level: ${{ github.sender }}"
-#         echo ${{ github.event.sender }}
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    -  run: |
+        echo  ${{ github.event.client_payload.ref }}
+    - run: |
+        echo  ${{ github.event.client_payload.ref }}
+       # echo ${{ github.event.sender }}
 #     - run: npm ci
 #     - run: npm test
-      - uses: actions/checkout@v3
-        with:
-          ref: ${{ github.ref }}
-      - run: echo ${{ github.event.client_payload.ref }}
-      - run: echo ${{ github.event.client_payload.ref }}
+#       - uses: actions/checkout@v3
+#         with:
+#           ref: ${{ github.ref }}
+      #- run: echo ${{ github.event.client_payload.ref }}
+    #  - run: echo ${{ github.event.client_payload.ref }}
