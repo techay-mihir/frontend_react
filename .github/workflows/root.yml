@@ -9,17 +9,12 @@ on:
 
 
 jobs:
-  call-workflow-1-in-local-repo:
-    uses: ./.github/workflows/node1.js.yml
+
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -28,5 +23,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    #- run: npm run build --if-present
     - run: npm test
