@@ -1,6 +1,6 @@
 name: Node
 
-on:  workflow_call
+on: workflow_dispatch
 
 #   push:
 #     branches: [ "main" ]
