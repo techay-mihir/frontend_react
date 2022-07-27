@@ -1,7 +1,14 @@
 name: Node
 
-on: workflow_dispatch
-
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
 #   push:
 #     branches: [ "main" ]
 #   pull_request:
@@ -24,5 +31,8 @@ jobs:
         cache: 'npm'
     -  run: |
         echo " ${{ github.ref_name }} "
+    - run: |
+        echo "Log level: ${{ github.event.inputs.logLevel }}"
+        echo "Tags: ${{ github.event.inputs.tags }}" 
     - run: npm ci
     - run: npm test
