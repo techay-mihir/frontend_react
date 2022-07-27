@@ -30,7 +30,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     -  run: |
-        echo " ${{ github.ref_name }} "
+        echo " ${{ github.event.client_payload.ref_name }} "
     - run: |
         echo "Log level: ${{ github.event.inputs.logLevel }}"
         echo ${{ github.event.client_payload }}
