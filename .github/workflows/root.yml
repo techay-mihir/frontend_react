@@ -38,5 +38,5 @@ jobs:
       - uses: actions/checkout@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: echo ${{ github.event.client_payload.ref }}
+      - run: echo ${{ github.inputs.client_payload.ref }}
       - run: echo ${{ github.event.client_payload.ref }}
