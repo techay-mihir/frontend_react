@@ -1,13 +1,13 @@
 name: Node
 
-# on:
-#   workflow_dispatch:
-#     inputs:
-#       ref:
-#         description: 'REEff'     
 on:
-  repository_dispatch:
-    types: [my-event]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'REEff'     
+# on:
+#   repository_dispatch:
+#     types: [my-event]
 #   push:
 #     branches: [ "main" ]
 #   pull_request:
