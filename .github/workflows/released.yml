@@ -1,0 +1,27 @@
+name: Released
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: my-org/some-repo/.github/workflows/build.yml@main
+    secrets:
+      SOME_SECRET: ${{ secrets.SOME_SECRET }}
+
+  released:
+    needs: build
+
+    steps:
+      - name: Download build-output artifact
+        uses: actions/download-artifact@master
+        with:
+          name: build-output
+          path: build/
+
+      # The "build" directory is now available inside this job
+
+      - name: Upload source maps
+        run: something
