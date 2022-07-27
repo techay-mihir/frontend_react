@@ -1,13 +1,11 @@
 name: Node
 
-# on:
-#   workflow_dispatch:
-#     inputs:
-#       ref:
-#         description: 'REEff'     
 on:
-  repository_dispatch:
-    types: [my-event]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'REEff'     
+  
 #   push:
 #     branches: [ "main" ]
 #   pull_request:
@@ -35,7 +33,10 @@ jobs:
 #         echo ${{ github.event.sender }}
 #     - run: npm ci
 #     - run: npm test
-      - uses: actions/checkout@v3
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v2
         with:
-          ref: ${{ github.event.client_payload.ref }}
-      - run: echo ${{ github.event.client_payload.sha }}
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: username/my-repo
+          event-type: my-event
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
