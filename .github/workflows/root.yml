@@ -39,4 +39,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: echo ${{ github.inputs.client_payload.ref }}
+      - run: 'echo "payload: ${{ toJson(github.event.client_payload) }}"'
       - run: echo ${{ github.event.client_payload.ref }}
