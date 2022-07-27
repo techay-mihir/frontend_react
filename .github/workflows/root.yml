@@ -22,5 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    -  run: |
+        echo " ${{ github.ref_name }} "
     - run: npm ci
     - run: npm test
