@@ -37,5 +37,6 @@ jobs:
 #     - run: npm test
       - uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.client_payload.ref }}
+          ref: ${{ github.ref }}
       - run: echo ${{ github.event.client_payload.sha }}
+      - run: echo ${{ github.event.client_payload.ref }}
