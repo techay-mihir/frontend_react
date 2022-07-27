@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    uses: my-org/some-repo/.github/workflows/build.yml@main
+    uses: frontend_react/.github/workflows/build.yml@main
     secrets:
       SOME_SECRET: ${{ secrets.SOME_SECRET }}
 
