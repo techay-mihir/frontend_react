@@ -11,9 +11,8 @@ on:
 
 
 jobs:
-  call-wf1:
+  call-workflow-1-in-local-repo:
     uses: ./.github/workflows/node1.js.yml
-    secrets: inherit
   build:
 
     runs-on: ubuntu-latest
