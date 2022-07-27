@@ -3,12 +3,9 @@ name: Node
 on:
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'     
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'  
+      ref:
+        description: 'REEff'     
+  
 #   push:
 #     branches: [ "main" ]
 #   pull_request:
@@ -32,7 +29,7 @@ jobs:
     -  run: |
         echo " ${{ github.event.args.ref }} "
     - run: |
-        echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo ${{ github.event.client_payload }}
+        echo "Log level: ${{ github.event.inputs.ref }}"
+        echo ${{ github.event.ref }}
     - run: npm ci
     - run: npm test
