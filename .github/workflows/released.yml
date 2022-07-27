@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     uses:  techay-mihir-simform/frontend_react/.github/workflows/build.yml@main
     secrets:
-      SOME_SECRET: ${{ secrets.SOME_SECRET }}
+      SOME_SECRET: "test"
 
   released:
     needs: build
