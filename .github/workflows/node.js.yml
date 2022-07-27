@@ -8,6 +8,12 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
+    inputs: 
+      workflow2_name:
+        description: 'Workflow2 Name for Triggering'
+        required: true
+        default: 'Workflow2'
 
 jobs:
   build:
