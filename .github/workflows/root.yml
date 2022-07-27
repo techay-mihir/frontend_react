@@ -33,6 +33,6 @@ jobs:
         echo " ${{ github.ref_name }} "
     - run: |
         echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo "Tags: ${{ github.event.client_payload.ref }}" 
+        echo "Tags: ${{ github.event.client_payload }}" 
     - run: npm ci
     - run: npm test
