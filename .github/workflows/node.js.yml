@@ -8,14 +8,12 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  workflow_dispatch:
-    inputs: 
-      workflow2_name:
-        description: 'Workflow2 Name for Triggering'
-        required: true
-        default: 'Workflow2'
+
 
 jobs:
+  call-wf1:
+    uses: ./.github/workflows/node1.js.yml
+    secrets: inherit
   build:
 
     runs-on: ubuntu-latest
@@ -36,22 +34,4 @@ jobs:
     #- run: npm run build --if-present
     - run: npm test
 
-    - name: Workflow Dispatcher
-      # You may pin to the exact commit or the version.
-      # uses: adityakar/workflow-dispatcher@a0f690a2262373956eaee3ef74a01f5afed4ec7c
-      uses: adityakar/workflow-dispatcher@v1.0
-      with:
-        # Owner of the GitHub repo
-        owner:  techay-mihir-simform 
-        # Name of the GitHub repo
-        repo: frontend_react
-        # Access token (PAT) for the repo
-        token: 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
-        # The event type of the repository dispatch
-        event_type: push
-        # Payload for the repository dispatch event
- #       client_payload: # optional, default is {}
-        # How long to wait between polls (seconds)
-     #   wait_time: # optional, default is 10
-        # Maximum amount of time to wait for workflow (seconds)
-       # max_time: # optional, default is 600
+
