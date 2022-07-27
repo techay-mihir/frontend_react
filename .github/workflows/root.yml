@@ -24,7 +24,7 @@ jobs:
     steps:
 #     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+      uses: actions/checkout@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
@@ -32,7 +32,7 @@ jobs:
         echo  ${{ github.event.client_payload.ref }}
     - run: |
         echo  ${{ github.event.client_payload.ref }}
-       # echo ${{ github.event.sender }}
+#        echo ${{ github.event.sender }}
 #     - run: npm ci
 #     - run: npm test
 #       - uses: actions/checkout@v3
