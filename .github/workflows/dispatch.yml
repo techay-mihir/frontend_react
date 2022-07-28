@@ -44,9 +44,7 @@ name: action-test
 on:
   workflow_dispatch:
     inputs:
-      distinct_id:
-        required: true
-      cake: # Test for input passthrough.
+      ref: # Test for input passthrough.
         required: true
 
 jobs:
