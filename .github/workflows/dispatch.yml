@@ -55,5 +55,5 @@ jobs:
         run: echo ${{ github.event.inputs.distinct_id }}
       - name: echo input passthrough
         run: echo ${{ github.event.inputs.ref }}
-        run : echo ${{ GITHUB_REF_NAME }}
+      - run : echo ${{ GITHUB_REF_NAME }}
       - run: sleep 100
